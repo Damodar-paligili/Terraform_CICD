@@ -4,9 +4,15 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-              git branch: 'main', url: 'https://github.com/Damodar-paligili/Terraform_CICD.git'
+              git branch: 'main', url: 'https://github.com/Damodar-paligili/terraform-9am.git'
             }
         }
+        stage('change directory')  {
+            steps {
+                sh 'cd DAY-1-BASICS'
+            }
+        }
+
         stage('init') {
             steps {
                 sh 'terraform init'
