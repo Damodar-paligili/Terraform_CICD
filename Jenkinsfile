@@ -9,13 +9,22 @@ pipeline {
         }
         
 
-        stage('init') {
+     stage('init') {
             steps {
                 sh 'cd DAY-1-BASICS'
                 sh 'terraform init'
             }
         }
-         stage('plan') {
+    stage('Debug') {
+            steps {
+        sh '''
+        pwd
+        ls -la
+        find . -name "*.tf"
+        '''
+        }
+        }
+   stage('plan') {
             steps {
                 
                 sh 'terraform plan'
