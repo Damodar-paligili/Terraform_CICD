@@ -11,19 +11,11 @@ pipeline {
 
      stage('init') {
             steps {
-                sh 'cd DAY-1-BASICS'
+                dir('DAY-1-BASICS')
                 sh 'terraform init'
             }
         }
-    stage('Debug') {
-            steps {
-        sh '''
-        pwd
-        ls -la
-        find . -name "*.tf"
-        '''
-        }
-        }
+   
    stage('plan') {
             steps {
                 
