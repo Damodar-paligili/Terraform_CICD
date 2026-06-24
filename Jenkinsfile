@@ -19,8 +19,9 @@ pipeline {
    
    stage('plan') {
             steps {
-                
+                dir('DAY-1-BASICS'){
                 sh 'terraform plan'
+            }
             }
         }
     }
