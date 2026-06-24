@@ -11,8 +11,9 @@ pipeline {
 
      stage('init') {
             steps {
-                dir('DAY-1-BASICS')
+                dir('DAY-1-BASICS'){
                 sh 'terraform init'
+            }
             }
         }
    
